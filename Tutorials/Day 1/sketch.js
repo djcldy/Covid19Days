@@ -27,9 +27,10 @@ function draw(){
 	faces.forEach(face=>{
 
 		let d = (face.leftEye.x - face.rightEye.x)*2.5
-		i++
+		
 		var frame = video.get(face.nose.x-d/2, face.nose.y-d/2,d,d)
 		image(frame,-width/2,-height/2+100*i,100,100)
+		i++
 		// stroke(255,0,0)
 		// noFill()
 		// rect(-width/2+100+face.nose.x,-height/2+face.nose.y,d,d)
