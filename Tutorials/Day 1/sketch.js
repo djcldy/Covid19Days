@@ -1,4 +1,4 @@
-let numX = 48, numY = 48, radius = 200, distance = 10, poseNet, nose, video, faces = []
+let numX = 96, numY = 96, radius = 200, distance = 10, poseNet, nose, video, faces = []
 
 function setup(){
 
@@ -35,7 +35,7 @@ function draw(){
 		rect(-width/2+100+face.nose.x,-height/2+face.nose.y,d,d)
 		noStroke()
 		push()
-		scale(d/width*5
+		scale(d/width*5)
 		translate(width*0.5-width/2+face.nose.x/video.width*(width*0.5), height*0.2 -height/2+face.nose.y/video.height*height*0.8,d)
 		rotateX(PI/2)
 		rotateY(PI)
