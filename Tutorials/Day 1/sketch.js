@@ -20,8 +20,8 @@ function setup(){
 
 function draw(){
 
-	background(255)
-	image(video,-width/2+100,-height/2)
+	background(0)
+	// image(video,-width/2+100,-height/2)
 	let i = 0 
 
 	faces.forEach(face=>{
@@ -30,13 +30,13 @@ function draw(){
 		i++
 		var frame = video.get(face.nose.x-d/2, face.nose.y-d/2,d,d)
 		image(frame,-width/2,-height/2+100*i,100,100)
-		stroke(255,0,0)
-		noFill()
-		rect(-width/2+100+face.nose.x,-height/2+face.nose.y,d,d)
+		// stroke(255,0,0)
+		// noFill()
+		// rect(-width/2+100+face.nose.x,-height/2+face.nose.y,d,d)
 		noStroke()
 		push()
 		scale(d/width*5)
-		translate(width*0.5-width/2+face.nose.x/video.width*(width*0.5), height*0.2 -height/2+face.nose.y/video.height*height*0.8,d)
+		translate(width*0.1-width/2+face.nose.x/video.width*(width*0.9), height*0.2 -height/2+face.nose.y/video.height*height*0.6,d)
 		rotateX(PI/2)
 		rotateY(PI)
 		rotateZ(sin(frameCount*0.01+i/500)*PI)
