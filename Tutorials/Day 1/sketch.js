@@ -20,7 +20,7 @@ function setup(){
 
 function draw(){
 
-	background(255)
+	background(0)
 	// image(video,-width/2+100,-height/2)
 	let i = 0 
 
