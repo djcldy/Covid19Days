@@ -49,7 +49,6 @@ function draw(){
 		
 		push()
 
-		// translate(-width/4+face.nose.x/video.width*width/2,-height/4+face.nose.y/video.height*height/2)
 		scale(d/width*5)
 		translate(width*0.5-width/2+face.nose.x/video.width*(width*0.5), height*0.2 -height/2+face.nose.y/video.height*height*0.8,d)
 
