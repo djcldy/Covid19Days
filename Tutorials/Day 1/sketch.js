@@ -2,8 +2,8 @@ let numX = 48, numY = 48, radius = 200, distance = 10, poseNet, nose, video, fac
 
 function setup(){
 
-	createCanvas(1800,900,WEBGL)
-	video = createCapture(VIDEO)
+	createCanvas(1500,720,WEBGL)
+	video = createCapture(640,480)
 	video.hide()
 	noStroke()
 	rectMode(CENTER)
@@ -54,7 +54,7 @@ function draw(){
 
 		rotateX(PI/2)
 		rotateY(PI)
-		rotateZ(sin(frameCount*0.01)*PI)
+		rotateZ(sin(frameCount*0.01+i/500)*PI)
 
 		for (var b = 0; b < frame.height; b+= d/numY){
 
@@ -66,17 +66,22 @@ function draw(){
 				let offset = 0 
 				let distance =dist(a,b,frame.width/2,frame.height/2) 
 
-				if (distance < d/8) offset = (d/8-distance)*5
+				if (distance > frame.width/2) {
+					if (random()<0.9) continue
+				}
+
+				if (distance < d/8) offset = (d/8-distance)*3
 
 				let angle = a/frame.width*PI
 				let x = cos(angle) * (r+offset), y = sin(angle) * (r+offset)
 				push()
 				let col = frame.get(a,b)
-				fill(col)
+				fill(col[0],col[1],col[2], 255)
 				translate(x, y, z)
 				rotateX(angle)
-				// sphere(r/numX)
-				box(r/numX*2,r/numX*10,r/numX*2)
+				// rotateY(frameCount*0.012)
+				// rotateZ(frameCount*0.1)
+				box(r/numX*2,r/numX*2,r/numX*2)
 				pop()
 
 			}	
