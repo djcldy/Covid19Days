@@ -1,4 +1,4 @@
-let numX = 96, numY = 96, radius = 200, distance = 10, poseNet, nose, video, faces = []
+let numX = 48, numY = 48, radius = 200, distance = 10, poseNet, nose, video, faces = []
 
 function setup(){
 
